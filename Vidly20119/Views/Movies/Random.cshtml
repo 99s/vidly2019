@@ -1,0 +1,33 @@
+﻿@model Vidly20119.ViewModels.RandomMoviewViewModel
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*
+    This is a comment.
+*@
+
+@{ 
+    var _classname = Model.CustomerVM.Count > 5 ? "popular" : null;
+}
+
+<h2 class= _classname >@Model.MovieVM.Name</h2>
+
+@{
+    if (Model.CustomerVM.Count == 0)
+    {
+        <text>No One Rented This Movie Before</text>
+    }
+    foreach (var _c in Model.CustomerVM)
+    {
+        <ol>
+            <li>@_c.Name</li>
+        </ol>
+            
+    }
+ }
+
+
+
+
